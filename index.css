@@ -106,3 +106,39 @@ h2 {
 .github-link:hover {
     background-color: #555;
 }
+
+.feature-item {
+    text-align: center;
+    width: 30%;
+    position: relative; /* Required for absolute positioning of content */
+}
+
+.feature-item img {
+    max-width: 100%;
+    max-height: 200px;
+    width: auto;
+    height: auto;
+}
+
+.feature-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.feature-item.active .feature-content {
+    display: block;
+}
+
+.feature-toggle {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #61dafb;
+}
+
+.feature-toggle:hover {
+    color: #21a1f1;
+}

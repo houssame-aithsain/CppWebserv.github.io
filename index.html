@@ -32,19 +32,62 @@
         <h2>Key Features</h2>
         <div class="features-grid">
             <div class="feature-item">
-                <img src="./src/upload.png" alt="HTTP Request Handling">
+                <img src="./src/post.png" alt="HTTP Request Handling">
                 <h3>HTTP Request Handling</h3>
-                <p>Handles GET, POST, and DELETE methods to provide robust web functionalities.</p>
+                <p class="feature-toggle">What is HTTP Request Handling?</p>
+                <div class="feature-content">
+                    <h4>GET Method:</h4>
+                    <p>The GET method is used to retrieve data from the server. It requests a resource, such as a webpage or an API endpoint, without modifying any data on the server.</p>
+                    <p><strong>Usage:</strong> When a client (such as a web browser) sends a GET request, it might request a specific webpage, an image, or data from an API. The server responds with the requested resource.</p>
+                    <p><strong>Characteristics:</strong> GET requests are idempotent, meaning that multiple identical requests will result in the same response without causing side effects.</p>
+                    
+                    <h4>POST Method:</h4>
+                    <p>The POST method is used to send data to the server to create or update resources. It can modify the server’s data or trigger server-side actions.</p>
+                    <p><strong>Usage:</strong> When a client submits a form on a webpage or uploads a file, it sends a POST request with the relevant data. The server processes this data and typically returns a response indicating success or failure.</p>
+                    <p><strong>Characteristics:</strong> POST requests are not idempotent, meaning that sending the same request multiple times can result in different outcomes (e.g., creating multiple records).</p>
+            
+                    <h4>DELETE Method:</h4>
+                    <p>The DELETE method is used to remove a resource from the server. It requests the deletion of a specific resource identified by a URL.</p>
+                    <p><strong>Usage:</strong> When a client wants to delete an item, such as a resource or data entry, it sends a DELETE request. The server processes this request and removes the specified resource if it exists.</p>
+                    <p><strong>Characteristics:</strong> DELETE requests are idempotent, meaning that multiple identical DELETE requests will result in the same state on the server (the resource will be deleted if it exists).</p>
+                </div>
             </div>
             <div class="feature-item">
                 <img src="./src/CGI.png" alt="CGI Integration">
                 <h3>CGI Integration</h3>
-                <p>Seamless CGI support to handle file uploads and dynamic content generation.</p>
+                <p class="feature-toggle">What is CGI Integration?</p>
+                <div class="feature-content">
+                    <p>CGI (Common Gateway Interface) integration provides seamless support for handling file uploads and generating dynamic content. CGI is a standard protocol that allows web servers to interact with external programs or scripts to produce dynamic web content.</p>
+                    
+                    <h4>File Uploads:</h4>
+                    <p>With CGI, our server can handle file uploads from clients. This involves receiving files from web forms, processing them on the server, and storing them in specified directories or databases.</p>
+            
+                    <h4>Dynamic Content Generation:</h4>
+                    <p>CGI allows the server to execute scripts or programs to generate content dynamically based on user input or other data. For example, CGI scripts can produce custom HTML pages or process form submissions to deliver personalized content.</p>
+            
+                    <h4>How It Works:</h4>
+                    <p>When a request is made that requires dynamic content, the server invokes a CGI script or program. This script processes the request, performs necessary operations, and sends the result back to the web server, which then returns it to the client.</p>
+                </div>
             </div>
             <div class="feature-item">
-                <img src="feature3.png" alt="WebSockets">
+                <img src="./src/websocket.png" alt="WebSockets">
                 <h3>Real-Time WebSockets</h3>
-                <p>Enable real-time communications between client and server using WebSockets.</p>
+                <p class="feature-toggle">What are Real-Time WebSockets?</p>
+                <div class="feature-content">
+        <p>WebSockets enable real-time, two-way communication between the client and server. Unlike traditional HTTP connections, which require a new request for each interaction, WebSockets maintain a persistent connection, allowing for continuous data exchange.</p>
+        
+        <h4>Persistent Connection:</h4>
+        <p>Once established, a WebSocket connection remains open, enabling ongoing communication between the client and server. This is particularly useful for applications that require real-time updates, such as chat applications or live notifications.</p>
+
+        <h4>Real-Time Updates:</h4>
+        <p>With WebSockets, the server can push updates to the client instantly without the client having to request new data. This makes it ideal for scenarios like live sports scores, stock market updates, or collaborative tools where immediate feedback is crucial.</p>
+
+        <h4>Interactive Applications:</h4>
+        <p>WebSockets are well-suited for interactive applications where users' actions need to be reflected in real-time. Examples include online gaming, collaborative editing, and live streaming where timely responses are essential for a smooth user experience.</p>
+        
+        <h4>How It Works:</h4>
+        <p>A WebSocket connection begins with an initial handshake over HTTP. Once established, the connection is upgraded to a WebSocket connection, which allows for bidirectional communication. Both the client and server can send messages independently over this persistent connection.</p>
+    </div>
             </div>
         </div>
     </section>
@@ -53,20 +96,40 @@
     <section id="about" class="section">
         <h2>About This Project</h2>
         <p>
-            CppWebServ was inspired by a passion for learning how to build powerful, efficient, and scalable web servers. 
-            The project started during my time at 1337 as a way to deepen my understanding of networking and HTTP protocols.
-            With the ability to support various configurations and real-time communication, it’s a portfolio piece built for Holberton School. 
+            The journey that led to the creation of CppWebServ began with a fascination for the inner workings of web servers and the intricacies of network communication. My interest in these areas was sparked during my early days of exploring computer science, where I found myself captivated by how web servers handle requests and deliver content seamlessly across the internet.
+
+            In the summer of 2023, while working on various projects and diving deep into networking protocols, I realized there was a gap in my understanding of how web servers operate at a fundamental level. I wanted to bridge this gap by building something from scratch that would not only challenge my skills but also deepen my knowledge.
+
+            This desire led me to embark on the CppWebServ project. Over the next few months, I dedicated evenings and weekends to designing and developing a lightweight web server in C++. I meticulously studied HTTP methods, server-client interactions, and real-time communication through WebSockets. Each step of the way was driven by a passion to understand and implement these concepts in a tangible and functional manner.
+
+            By late 2023, as the project began to take shape, I saw it as a perfect opportunity to showcase my learning and development. CppWebServ became more than just a technical exercise; it was a testament to my growth and curiosity in the field of network programming.
+
+            This project is part of my portfolio for Holberton School, where I aimed to demonstrate not only my coding abilities but also my dedication to exploring complex technical concepts.
+
+            In essence, CppWebServ represents a personal milestone in my journey as a developer—a project born from curiosity, hard work, and a desire to push the boundaries of my knowledge.
         </p>
         <h3>Team</h3>
         <ul>
-            <li>Project Lead: Your Name 
-                <a href="https://linkedin.com/in/yourprofile">LinkedIn</a> |
-                <a href="https://github.com/yourprofile">GitHub</a> |
-                <a href="https://twitter.com/yourprofile">Twitter</a>
+            <li>Project Lead: Houssame Ait hsain</li>
+                <a href="https://www.linkedin.com/in/houssame-aithsain/">LinkedIn</a> |
+                <a href="https://github.com/houssame-aithsain">GitHub</a> |
+                <a href="https://x.com/aithoussame">Twitter</a>
             </li>
         </ul>
-        <a href="https://github.com/yourusername/CppWebServ" class="github-link">View on GitHub</a>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const featureItems = document.querySelectorAll('.feature-item');
+        
+            featureItems.forEach(item => {
+                const toggle = item.querySelector('.feature-toggle');
+                toggle.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
