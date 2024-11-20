@@ -1,44 +1,36 @@
-const API_KEY = "275d58779ccf4e22af03e792e8819fff";
-const recipeList = document.querySelector('ul');
+const diceHistory = document.querySelector('ul');
+const diceHolder = document.querySelector('.rollDice');
+const diceFaces = ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'];
+var diceNumbe = 0;
 
+document.querySelector('button').addEventListener('click', function rollingDice() {
+    diceNumbe++;
+    diceHolder.style.animation = 'none';
+    setTimeout(() => {
+        diceHolder.style.animation = 'roll 1s ease-in-out';
+    }, 0);
+    
+    let count = 0;
+    const interval = setInterval(() => {
+        const randomFace = diceFaces[Math.floor(Math.random() * diceFaces.length)];
+        diceHolder.innerText = randomFace;
 
-async function replaceData(recipes) {
-    recipes.forEach((recipe) => {
-        const image = document.createElement('img');
-        const li = document.createElement('li');
-        const p = document.createElement('p');
-        const h4 = document.createElement('h4');
-        const button = document.createElement('a');
+        count++;
+        if (count >= 10) {
+            const item = document.createElement('li');
+            item.id = 'frame';
+            item.innerText = `Roll ${diceNumbe}:`;
+            span = document.createElement('span');
+            span.innerText = diceHolder.innerText;
+            span.style.fontSize = '50px';
+            item.appendChild(span);
+            diceHistory.appendChild(item);
 
-        li.innerHTML = "";
-        li.id = 'recipe-item';
-
-        button.href = 'https://github.com/houssame-aithsain';
-        button.innerText = 'VIEW RECIPE';
-
-        image.src = recipe.image;
-        h4.innerText = recipe.name;
-        p.innerText = recipe.instructions[0];
-
-        li.appendChild(image);
-        li.appendChild(h4);
-        li.appendChild(p);
-        li.appendChild(button);
-
-        recipeList.appendChild(li);
-    });
-}
-
-async function getData() {
-    const response = await fetch('https://dummyjson.com/recipes');
-    const data = await response.json();
-    console.log(data);
-    return data;
-}
-
-async function main() {
-    const data = await getData();
-    await replaceData(data.recipes);
-}
-
-main();
+            clearInterval(interval);
+            diceHolder.style.animation = 'none';
+            setTimeout(() => {
+                diceHolder.style.animation = 'roll 2s ease-in-out infinite';
+            }, 0);
+        }
+    }, 90);
+});
