@@ -18,7 +18,7 @@ document.querySelector('button').addEventListener('click', function rollingDice(
         if (count >= 10) {
             const item = document.createElement('li');
             item.id = 'frame';
-			diceNumbe++;
+            diceNumbe++;
             item.innerText = `Roll ${diceNumbe}:`;
             span = document.createElement('span');
             span.innerText = diceHolder.innerText;
@@ -29,7 +29,7 @@ document.querySelector('button').addEventListener('click', function rollingDice(
             clearInterval(interval);
             diceHolder.style.animation = 'none';
             setTimeout(() => {
-                diceHolder.style.animation = 'roll 2s ease-in-out infinite';
+                diceHolder.style.animation = 'roll 6s ease-in-out infinite';
             }, 0);
         }
     }, 90);
